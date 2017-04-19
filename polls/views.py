@@ -13,7 +13,9 @@ def index(request):
     #     response_dict['key'] = key
     #     response_dict['value'] = my_json[key]
     # return JsonResponse(response_dict)
-
+    from urllib import parse
+    parse.unquote(body_unicode)
     response_dict = {}
-    response_dict['body'] = body_unicode
+    # response_dict["body"] = request.body
+    response_dict['decoded_body'] = body_unicode
     return JsonResponse(response_dict)
