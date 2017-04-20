@@ -23,6 +23,5 @@ def index(request):
 
 def test(request):
     if request.method == 'POST':
-        name = Name(name=request.POST['your_name'])
-        name.save()
+        return render(request, "polls/test.html", {'name': request.POST['your_name']})
     return render(request, "polls/test.html")
