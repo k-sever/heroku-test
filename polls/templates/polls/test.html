@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     
     <body>
@@ -12,5 +13,33 @@
         <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
         <input type="submit" value="OK">
     </form>
+
+
+    <form id='JSON_submission' action="https://tnthjegj7md.LIVE.verygoodproxy.com/post"  method="post">
+        {% csrf_token %}
+        <label for="your_name">Your name: </label>
+        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+        <input type="submit" value="OK">
+    </form>
+
+    <div id = 'json_form_result'>
+    </div>
+
+    <script language="JavaScript">
+        $(document).ready(function() {
+            $('#JSON_submission').submit(function() { // catch the form's submit event
+                $.ajax({ // create an AJAX call...
+                    data: $(this).serialize(), // get the form data
+                    type: $(this).attr('method'), // GET or POST
+                    url: $(this).attr('action'), // the file to call
+                    success: function(response) { // on success..
+                        $('#json_form_result').html(response.name); // update the DIV
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+
     </body>
 </html>
