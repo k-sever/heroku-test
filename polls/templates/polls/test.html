@@ -29,8 +29,14 @@
         $(document).ready(function() {
             $('#JSON_submission').submit(function() { // catch the form's submit event
                 $.ajax({ // create an AJAX call...
-                    beforeSend: function(request) {
-                        request.setRequestHeader("X-CSRF-Token", jQuery("[name=csrfmiddlewaretoken]").val());
+                    // beforeSend: function(request) {
+                    //     request.setRequestHeader("X-CSRF-Token", jQuery("[name=csrfmiddlewaretoken]").val());
+                    // },
+                    beforeSend: function(xhr, settings) {
+                        // if (!this.crossDomain) {
+                            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        // }
                     },
                     data: $(this).serialize(), // get the form data
                     type: "POST", // GET or POST
