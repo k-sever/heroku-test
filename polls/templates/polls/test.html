@@ -6,10 +6,10 @@
     </head>
     
     <body>
-    <h3 align="center">name: {{name}}</h3>
+    <!-- <h3 align="center">name: {{name}}</h3> -->
     <form action="https://tnthjegj7md.LIVE.verygoodproxy.com/post" method="post">
         {% csrf_token %}
-        <!-- <label for="your_name">Your name: </label> -->
+        <label for="your_name">Value to tokenize: </label>
         <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
         <input type="submit" value="OK">
     </form>
