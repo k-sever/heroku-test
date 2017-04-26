@@ -138,3 +138,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 APPEND_SLASH = False
 CSRF_COOKIE_DOMAIN = '.herokuapp.com'
 CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['morning-everglades-83706.herokuapp.com', 'tnthjegj7md.LIVE.verygoodproxy.com']
