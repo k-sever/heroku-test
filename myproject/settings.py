@@ -136,6 +136,6 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 APPEND_SLASH = False
-# CSRF_COOKIE_DOMAIN = 'powerful-plateau-74828.herokuapp.com'
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_DOMAIN = 'powerful-plateau-74828.herokuapp.com'
+CSRF_USE_SESSIONS = True
 CSRF_TRUSTED_ORIGINS = ['powerful-plateau-74828.herokuapp.com', 'tnt31p630kb.SANDBOX.verygoodproxy.com']
