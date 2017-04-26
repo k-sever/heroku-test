@@ -136,4 +136,5 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 APPEND_SLASH = False
-CSRF_USE_SESSIONS = True
+CSRF_COOKIE_DOMAIN = '.herokuapp.com'
+CSRF_COOKIE_SECURE = True
