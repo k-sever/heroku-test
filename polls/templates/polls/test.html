@@ -35,7 +35,7 @@
                     beforeSend: function(xhr, settings) {
                         // if (!this.crossDomain) {
                             var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                            xhr.setRequestHeader("Cookie", csrftoken);
                         // }
                     },
                     data: $(this).serialize(), // get the form data
